@@ -13,6 +13,10 @@ with words. You should return an array of all the anagrams or an empty array if 
 anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']) => ['aabb', 'bbaa']
 */
 
+String.prototype.sort = function() {
+  return this.split("").sort().join("");
+};
+
 function anagrams(word, words) {
-  return words.filter(w => w.split("").sort().join("") === word.split("").sort().join(""))
+  return words.filter(w => w.sort() === word.sort())
 }
