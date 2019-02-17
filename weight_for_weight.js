@@ -13,6 +13,10 @@ When two numbers have the same "weight", let us class them as if they were strin
 All numbers in the list are positive numbers and the list can be empty.
 */
 
+String.prototype.digitSum = function() {
+  return this.split("").reduce((a, b) => parseInt(a) + parseInt(b))
+}
+
 function orderWeight(string) {
   const sortedArray = string.split(" ").sort(function(a, b) {  
     if (a.digitSum() === b.digitSum() && a < b) {
