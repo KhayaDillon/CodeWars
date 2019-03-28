@@ -4,20 +4,6 @@ sentence "The quick brown fox jumps over the lazy dog" is a pangram, because it 
 Given a string, detect whether or not it is a pangram. Return True if it is, False if not. Ignore numbers and punctuation. */
 
 function isPangram(string){
-  const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", 
-    "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-    
-  const stringLetters = string.toLowerCase().split("").filter( char => char.toLowerCase() !== char.toUpperCase() ).sort() 
-  const uniqStringLetters = [... new Set(stringLetters)]
-  let pangram = true
-  
-  for (i = 0; i < uniqStringLetters.length; i++) {
-    if (uniqStringLetters.length !== alphabet.length) {
-      pangram = false
-    } else if (uniqStringLetters[i] !== alphabet[i]) {
-      pangram = false
-    }
-  }
-  
-  return pangram
+  string = string.toLowerCase()
+  return "abcdefghijklmnopqrstuvwxyz".split("").every( letter => string.indexOf(letter) !== -1 )
 }
