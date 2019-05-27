@@ -1,4 +1,4 @@
-function removeSmallest(numbers) {
+function removeMinimum(numbers) {
     var i=0;
     var small = numbers[i];
     while(i<numbers.length)
