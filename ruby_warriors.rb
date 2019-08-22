@@ -1,4 +1,4 @@
-#Figuring out Lvl 6
+#Lvl 6
 
 class Player
   def initialize
@@ -11,7 +11,7 @@ class Player
     if warrior.feel(@direction).enemy?
       warrior.attack!(@direction)
     elsif taking_damage?(warrior)
-      if warrior.health < 15
+      if warrior.health < 10
         @direction = :backward
         warrior.walk!(@direction)
       else
@@ -43,4 +43,5 @@ class Player
   end
   
 end
+  
   
